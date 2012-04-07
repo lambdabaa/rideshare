@@ -1,0 +1,2 @@
+class RidesController < ApplicationController
+end

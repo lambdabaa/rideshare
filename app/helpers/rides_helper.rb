@@ -1,0 +1,2 @@
+module RidesHelper
+end
