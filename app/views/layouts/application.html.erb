@@ -9,25 +9,32 @@
 <body>
 
 <div class="bigbox">
-<div id="logo" align = "center"><%= image_tag "logo2.png" %></div>
-<!-- Start css3menu.com BODY section -->
-<div id="Selection" align = "center">
-<ul id="css3menu1" class="topmenu">
-
-	<li class="topfirst"><a href="#" style="height:15px;line-height:15px;">Search</a></li>
-
-	<li class="topmenu"><a href="#" style="height:15px;line-height:15px;">Request a Ride</a></li>
-
-	<li class="topmenu"><a href="#" target="_blank" style="height:15px;line-height:15px;">Post a Ride</a></li>
-
-	<li class="topmenu"><a href="#" style="height:15px;line-height:15px;">Map</a></li>
-
-	<li class="toplast"><a href="#" style="height:15px;line-height:15px;">About Us</a></li>
-</ul>
-
-
+  <div id="logo" align = "center">
+    <%= image_tag "logo2.png" %>
+  </div>
+  
+  <div id="Selection" align ="center">
+    <ul id="css3menu1" class="topmenu">
+      <li class="topfirst">
+        <%= link_to "Search", root_path %>
+      </li>
+      <li class="topmenu">
+        <%= link_to "Request a Ride", url_for("#") %>
+      </li>
+      <li class="topmenu">
+        <%= link_to "Post a Ride", url_for("#") %>
+      </li>
+      <li class="topmenu">
+        <%= link_to "Map", url_for("#") %>
+      </li>
+      <li class="toplast">
+        <%= link_to "About Us", url_for("#") %>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <%= yield %>
+
 </body>
 </html>
