@@ -121,7 +121,7 @@ ul#css3menu1>li{
 ul#css3menu1 a:active, ul#css3menu1 a:focus{
 	outline-style:none;}
 ul#css3menu1 a{
-	display:block;vertical-align:middle;text-align:left;text-decoration:none;font:bold 16px Verdana, Geneva, sans-serif;;color:#cccccc;cursor:default;padding:10px 55px;background-color:#333;background-image:url("mainbk.png");background-repeat:repeat;background-position:0 200px;border-width:0px;border-style:none;border-color:;}
+	display:block;vertical-align:middle;text-align:left;text-decoration:none;font:bold 16px Verdana, Geneva, sans-serif;;color:#cccccc;cursor:default;padding:10px 28px;background-color:#333;background-image:url("mainbk.png");background-repeat:repeat;background-position:0 200px;border-width:0px;border-style:none;border-color:;}
 ul#css3menu1 li:hover>a,ul#css3menu1 a.pressed{
 	background-color:#00c4ff;border-style:none;color:#ffffff;text-decoration:none;background-image:url("mainbk.png");background-position:0 100px;}
 ul#css3menu1 img{
