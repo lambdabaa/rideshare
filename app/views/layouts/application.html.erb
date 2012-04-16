@@ -2,13 +2,72 @@
 <html>
 <head>
   <title>Rideshare</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "layout", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="bigbox">
+<div id="logo" align = "center"><%= image_tag "logo2.png" %></div>
+<!-- Start css3menu.com BODY section -->
+<div id="Selection" align = "center">
+<ul id="css3menu1" class="topmenu">
 
+	<li class="topfirst"><a href="#" style="height:15px;line-height:15px;">Search</a></li>
+
+	<li class="topmenu"><a href="#" style="height:15px;line-height:15px;">Request a Ride</a></li>
+
+	<li class="topmenu"><a href="#" target="_blank" style="height:15px;line-height:15px;">Post a Ride</a></li>
+
+	<li class="topmenu"><a href="#" style="height:15px;line-height:15px;">Map</a></li>
+
+	<li class="toplast"><a href="#" style="height:15px;line-height:15px;">About Us</a></li>
+</ul>
+
+
+</div>
+
+
+<div >    
+	<p class="word" align= center>
+        I am a...
+    </p>
+  <form id="form1" name="form1" method="post" action="" align=center>
+      <label for="choice">
+      </label>
+      <select name="choice" class="style-select">
+        <option>Driver</option>
+        <option>Rider</option>
+      </select>
+      </form>
+      </div>
+<div id="leftcolumn" height="200">
+          <p class="word" align=left>From</p>
+          <input class="tb" name="fromText" type="text" value="Middlebury" />    <p class="word">Depart</p>
+          <input class="tb" name="calendar" type="text" value="calendar" maxlength="20" />
+          <select name="from" class="style-select">
+          <option value="a">Anytime</option>
+          <option value="e">Early (4a-8a)</option>
+          <option value="m">Morning (8a-12p)</option>
+          <option value="afternoon">Afternoon (12p-5p)</option>
+          <option value="eve">Evening (5p-9p)</option>
+          <option value="night">Night (9p-12a)</option>
+          <option value="late">Late (12a-4a)</option>
+</select>
+      	</div>
+        
+        <div id="leftcolumn" height="200">
+        	<p class="word" align=left>To</p>
+     	 <input class="tb" name="toText" type="text" value="Boston" />
+         </div>
+         
+         <div id="rightcolumn" height="200">
+                   <p class="word">&nbsp;</p>
+        	<a href="#" class="button">Search</a>
+         </div>
+
+</div>
+<%= yield %>
 </body>
 </html>
