@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
   # has_many :trips_as_passenger, :through => "rides", :foreign_key => "trip_id", :class_name => "Trip"
   
   # TODO(gaye): Add validations
-
 end

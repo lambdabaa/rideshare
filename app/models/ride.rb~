@@ -6,7 +6,7 @@ class Ride < ActiveRecord::Base
   
   # TODO(gaye): Add validations
 
-  validates :trip_id, :numericality => true
-  validates :passenger_id, :numericality => true
+  validates :trip_id, :numericality => true # but can post a trip without trip_id
+  validates :passenger_id, :numericality => true # driver posts a ride, turns into trip w/o passenger_id?
 
 end

@@ -5,8 +5,8 @@ class Location < ActiveRecord::Base
   # TODO(gaye): Add validations
 
  # not sure if we want to be able to have a location without a name
-  validates :name, :presence => true, 
- 	    :length => {:maximum => 50} #might not be necessary if implement autocomplete
+ # validates :name, :presence => true, 
+ #	   :length => {:maximum => 50} #might not be necessary if implement autocomplete
 
   validates :latitude, :numericality => true,
 		       :greater_than_or_equal_to => -90,
@@ -16,5 +16,5 @@ class Location < ActiveRecord::Base
 		        :greater_than_or_equal_to => -180,
 		        :less_than_or_equal_to => 180
   
-  # need validations for datetimes
+  # need validates for created_at and updated_at (don't know how to check datetime)
 end
