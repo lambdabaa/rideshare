@@ -16,7 +16,8 @@ class TripsController < ApplicationController
   end
   
   def create
-    # TODO(gaye): Implement this
+    start_location = params[:id][:start_location]
+    
   end
   
   def destroy
