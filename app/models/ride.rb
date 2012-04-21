@@ -5,4 +5,8 @@ class Ride < ActiveRecord::Base
   belongs_to :passenger, :primary_key => "passenger_id", :foreign_key => "user_id", :class_name => "User"
   
   # TODO(gaye): Add validations
+
+  validates :trip_id, :numericality => true
+  validates :passenger_id, :numericality => true
+
 end
