@@ -2,32 +2,15 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready(function() {
-  alert("hey");
-	var availableTags = [
-		"ActionScript",
-		"AppleScript",
-		"Asp",
-		"BASIC",
-		"C",
-		"C++",
-		"Clojure",
-		"COBOL",
-		"ColdFusion",
-		"Erlang",
-		"Fortran",
-		"Groovy",
-		"Haskell",
-		"Java",
-		"JavaScript",
-		"Lisp",
-		"Perl",
-		"PHP",
-		"Python",
-		"Ruby",
-		"Scala",
-		"Scheme"
-	];
-	$.get("http://www.middlebury.edu/academics/cs/");
-
-	$("#fromLocation").autocomplete({source: availableTags});
+  googleAutocompleteAPI = function(query, add) {
+    $.getJSON("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + query.term + "&types=geocode&sensor=true&key=AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA", function(data) {
+      var suggestions = []; 	    
+      $.each(data.predictions, function(i, val){  
+        suggestions.push(val["description"]);  
+      });
+  	  add(suggestions);
+    }); 
+  }
+	$("#fromLocation").autocomplete({source: googleAutocompleteAPI});
+	$("#toLocation").autocomplete({source: googleAutocompleteAPI});
 });
