@@ -12,7 +12,9 @@ class Trip < ActiveRecord::Base
 
   validates :start_location_id, :numericality => true
   validates :finish_location_id, :numericality => true
-# validates :description, :length => {:maximum => 140} # twitter style max length?
   validates :cost, :numericality => true
+  
+  # TODO(bayers): Decide if we want to limit description length
+  # validates :description, :length => {:maximum => 140}
 
 end
