@@ -3,6 +3,10 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       # TODO(gaye): Add college credentials & integrate with exchange server
       
+	  t.string :provider
+      t.string :uid	
+      t.string :name
+      
       t.timestamps
     end
   end

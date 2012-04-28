@@ -20,6 +20,13 @@ body {
 	clear:both;
 }
 
+.omniauth{
+	float: right;
+	text-align: right;
+	color: red;
+	font-weight:bold;
+}
+
 .bigbox {
 	width: 820px; 
 	height:800px;
