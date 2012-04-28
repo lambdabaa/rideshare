@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url, :notice => "Signed out!"
   end
+  
+  def failure
+    redirect_to root_url, :flash => {:error => "Could not log you in. Please try again."}
+  end
+  
 end
