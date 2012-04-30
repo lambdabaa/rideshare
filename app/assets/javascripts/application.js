@@ -16,13 +16,12 @@
 $(document).ready(function() {
   googleAutocompleteAPI = function(query, add) {
     $.getJSON("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + query.term + "&types=geocode&sensor=true&key=AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA", function(data) {
-      var suggestions = []; 	    
+      var suggestions = [];      
       $.each(data.predictions, function(i, val){  
         suggestions.push(val["description"]);  
       });
-  	  add(suggestions);
+     add(suggestions);
     }); 
   }
-  
   $(".location_autocomplete").autocomplete({source : googleAutocompleteAPI});
 });
