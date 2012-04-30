@@ -11,6 +11,9 @@
     </div>
   <% end %>
   
+  <div id="stylized" class="myform">
+    <h1>New Trip</h1>
+	<p></p>
   <div class="field">
     <%= f.label :start_location %>
     <%= f.text_field :start_location %>
@@ -26,6 +29,8 @@
     <%= f.text_field :departure %>
   </div>
   
+
+  
   <div class="field">
     <%= f.label :arrival %>
     <%= f.text_field :arrival %>
@@ -39,5 +44,9 @@
   <div class="field">
     <%= f.label :cost %>
     <%= f.text_field :cost %>
+  </div>
+ <div >
+	<a href="#" class="button">Post</a>
+ </div>
   </div>
 <% end %>
