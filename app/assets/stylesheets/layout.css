@@ -4,17 +4,6 @@ body {
 	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #007BA1), color-stop(1, #002640));
 }
 
-#leftcolumn {
-	padding:8px 50px;
-	width: 20%; 
-	float: left;
-}
-
-#rightcolumn {
-	padding:8px 50px;
-	width: 20%;
-	float: right;
-}
 
 .text_line {
 	clear:both;
@@ -22,7 +11,6 @@ body {
 
 .bigbox {
 	width: 820px; 
-	height:800px;
 	margin-left:auto;
 	margin-right:auto;
 	background:#C2DFFF;
@@ -49,14 +37,6 @@ body {
    height: 24px;
    	-moz-border-radius: 5px;
 	border-radius: 5px;
-}
-
-.word {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size:15px;
-	color:#000000;
-	font-weight:bold;
-	text-shadow:#3d3d3d 0px 1px 1px;
 }
 
 .button {
@@ -126,7 +106,7 @@ ul#css3menu1{
 	list-style:none;
 	padding:1px 1px 1px 0;
 	background-color:#000;
-	background-image:url("mainbk.png");
+	background-image:url("../images/mainbk.png");
 	background-repeat:repeat;
 	border-width:0px;border-style:solid;
 	border-color:#999999;
@@ -167,7 +147,7 @@ ul#css3menu1 a{
 	cursor:default;
 	padding:10px 28px;
 	background-color:#333;
-	background-image:url("mainbk.png");
+	background-image:url("../images/mainbk.png");
 	background-repeat:repeat;
 	background-position:0 200px;
 	border-width:0px;
@@ -180,7 +160,7 @@ ul#css3menu1 li:hover>a,ul#css3menu1 a.pressed{
 	border-style:none;
 	color:#ffffff;
 	text-decoration:none;
-	background-image:url("mainbk.png");
+	background-image:url("../images/mainbk.png");
 	background-position:0 100px;
 }
 	
@@ -212,7 +192,7 @@ ul#css3menu1 li a.pressed img.def{
 	
 ul#css3menu1 li:hover>a,ul#css3menu1 li>a.pressed{
 	background-color:#00c4ff;
-	background-image:url("mainbk.png");
+	background-image:url("../images/mainbk.png");
 	background-position:0 100px;
 	border-style:none;
 	color:#ffffff;
@@ -257,4 +237,142 @@ ul#css3menu1 li.toplast>a{
 	
 ul#css3menu1 li.toplast:hover>a,ul#css3menu1 li.toplast>a.pressed{
 	text-shadow:#3d3d3d 0px -1px 1px;
+}
+
+
+
+
+body{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform{
+margin:0 auto;
+width:500px;
+padding:14px;
+}
+
+/* ----------- stylized ----------- */
+#stylized{
+border:solid 2px #b7ddf2;
+background:#ebf4fb;
+-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylized input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:300px;
+margin:2px 0 20px 10px;
+}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+
+/* ----------- stylized Search----------- */
+#stylizedSearch{
+border:solid 2px #b7ddf2;
+background:#ebf4fb;
+height: 400px;	
+-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+#stylizedSearch h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylizedSearch p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+#stylizedSearch label{
+display:block;
+font-weight:bold;
+text-align:center;
+width:140px;
+float:left;
+font-size: 14px;
+}
+#stylizedSearch .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylizedSearch input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:120px;
+margin:2px 0 20px 10px;
+}
+#stylizedSearch leftcolumn {
+	padding:8px 10px;
+	width: 30%; 
+	float: left;
+}
+#stylizedSearch rightcolumn {
+	padding:8px 10px;
+	width: 30%; 
+	float: right;
+}
+#stylizedSearch button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
 }
