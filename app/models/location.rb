@@ -9,4 +9,14 @@ class Location < ActiveRecord::Base
         ((a.latitude - b.latitude) ** 2) +
         ((a.longitude - b.longitude) ** 2))
   end
+  
+  def self.get_location(string)
+    location = Location.find_by_name(string)
+    if (!location) 
+      latlng = Trip.latlngFinder(string)
+      Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) 
+      location = Location.find_by_name(string)
+    end
+    location
+  end
 end
