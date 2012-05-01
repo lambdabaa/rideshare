@@ -11,12 +11,11 @@ class Location < ActiveRecord::Base
   end
   
   def self.get_location(string)
-    location = Location.find_by_name(string)
-    if (!location) 
+    if !(location = Location.find_by_name(string)) 
       latlng = Trip.latlngFinder(string)
-      Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) 
-      location = Location.find_by_name(string)
+      location = Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) 
     end
+    
     location
   end
 end

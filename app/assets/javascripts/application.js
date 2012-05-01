@@ -15,13 +15,17 @@
  //= require_tree .
 $(document).ready(function() {
   googleAutocompleteAPI = function(query, add) {
-    $.getJSON("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + query.term + "&types=geocode&sensor=true&key=AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA", function(data) {
-      var suggestions = [];      
-      $.each(data.predictions, function(i, val){  
-        suggestions.push(val["description"]);  
-      });
-     add(suggestions);
-    }); 
+    BASE_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=";
+    API_KEY = "AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA";
+    $.getJSON(BASE_URL + query.term + "&types=geocode&sensor=true&key=" + API_KEY, 
+        function(data) {
+          var suggestions = [];      
+          $.each(data.predictions, function(i, val) {  
+            suggestions.push(val["description"]);  
+          });
+          add(suggestions);
+        }
+    ); 
   }
   $(".location_autocomplete").autocomplete({source : googleAutocompleteAPI});
 });

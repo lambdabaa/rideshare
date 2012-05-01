@@ -16,17 +16,10 @@ class TripsController < ApplicationController
   end
   
   def create
-    start_string = params["trip"][:start_location]
-    end_string = params["trip"][:finish_location]   
-    
-    new_params = params["trip"].clone
-    new_params.delete("start_location")
-    new_params.delete("finish_location")    
-          
-    new_params[:start_location_id] = Location.get_location(start_string).id
-    new_params[:finish_location_id] = Location.get_location(end_string).id
+    params[:trip][:start_location_id] = Location.get_location(params[:trip].delete(:start_location)).id
+    params[:trip][:finish_location_id] = Location.get_location(params[:trip].delete(:finish_location)).id
 
-    @trip = Trip.new(new_params)
+    @trip = Trip.new(params[:trip])
     
     respond_to do |format|
       if @trip.save
