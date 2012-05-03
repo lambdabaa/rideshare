@@ -2,7 +2,7 @@
 # Passengers can take many trips and trips can have many passengers
 class Ride < ActiveRecord::Base
   belongs_to :trip
-  belongs_to :passenger, :primary_key => "passenger_id", :foreign_key => "user_id", :class_name => "User"
+  belongs_to :passenger, :foreign_key => "passenger_id", :class_name => "User"
   
   # TODO(gaye): Add validations
 end

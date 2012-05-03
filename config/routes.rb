@@ -1,5 +1,6 @@
 Rideshare::Application.routes.draw do
-  root :to => 'home#index'
+  root :to => 'trips#index'
   
   resources :trips
+  resources :rides
 end

@@ -1,0 +1,21 @@
+<div class="trip">
+  Driver: <%= render :partial => 'users/user', :locals => {:user => trip.driver} %>
+  <br />
+  
+  Passengers:
+  <%= trip.passengers.each do |passenger| %>
+    <%= render :partial => 'users/user', :locals => {:user => passenger} %>
+  <% end %>
+  <br />
+  
+  Date: <%= trip.departure %>
+  <br />
+  
+  Start Location: <%= trip.start_location.name %>
+  <br />
+  
+  Finish Location: <%= trip.finish_location.name %>
+  <br />
+  
+  Cost: <%= trip.cost %>
+</div>

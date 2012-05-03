@@ -1,6 +1,16 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    if params[:search]
+      @trips = Trip.filter_by_date_and_start_and_finish_location(
+          params[:search][:first_date],
+          params[:search][:last_date],
+          params[:search][:start_location],
+          params[:search][:finish_location],
+          params[:search][:max_start_distance_offset],
+          params[:search][:max_finish_distance_offset])
+    else
+      @trips = Trip.all
+    end
   end
   
   def show

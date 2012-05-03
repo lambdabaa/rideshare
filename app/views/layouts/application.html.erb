@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Rideshare</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "layout", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,16 +20,10 @@
         <%= link_to "Search", root_path %>
       </li>
       <li class="topmenu">
-        <%= link_to "Request a Ride", "#" %>
+        <%= link_to "Request a Ride", new_ride_path %>
       </li>
       <li class="topmenu">
-        <%= link_to "Post a Ride", url_for("#") %>
-      </li>
-      <li class="topmenu">
-        <%= link_to "Map", url_for("#") %>
-      </li>
-      <li class="toplast">
-        <%= link_to "About Us", url_for("#") %>
+        <%= link_to "Post a Ride", new_trip_path %>
       </li>
     </ul>
   </div>
