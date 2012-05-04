@@ -1,11 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+middlebury_to_boston:
+  user: gareth
+  start_location: middlebury
+  finish_location: boston
+  cost: 10.00
+  departure: <%= Time.now %>
+  has_driver: true
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+boston_to_middlebury:
+  user: gareth
+  start_location: boston
+  finish_location: middlebury
+  cost: 10.00
+  departure: <%= Time.now %>
+  has_driver: false

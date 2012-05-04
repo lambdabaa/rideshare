@@ -1,21 +1,7 @@
 <div class="trip">
-  Driver: <%= render :partial => 'users/user', :locals => {:user => trip.driver} %>
-  <br />
+  <%= link_to_unless_current "#{trip.has_driver ? 'Looking for' : 'Offering'} a ride", trip %>
+  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for $#{trip.cost}." %>
+  <br /><br />
   
-  Passengers:
-  <%= trip.passengers.each do |passenger| %>
-    <%= render :partial => 'users/user', :locals => {:user => passenger} %>
-  <% end %>
-  <br />
-  
-  Date: <%= trip.departure %>
-  <br />
-  
-  Start Location: <%= trip.start_location.name %>
-  <br />
-  
-  Finish Location: <%= trip.finish_location.name %>
-  <br />
-  
-  Cost: <%= trip.cost %>
+  Posted by: <%= render :partial => 'users/user', :locals => {:user => trip.user} %>
 </div>

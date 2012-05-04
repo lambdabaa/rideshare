@@ -1,13 +1,11 @@
 class Trip < ActiveRecord::Base
-  belongs_to  :driver, :foreign_key => "driver_id", :class_name => "User"
-  has_many    :rides
-  has_many    :passengers, :through => :rides
+  belongs_to  :user
   belongs_to  :start_location,  :foreign_key => "start_location_id",  :class_name => "Location"
   belongs_to  :finish_location, :foreign_key => "finish_location_id", :class_name => "Location"
 
   # TODO(gaye): Add validations
   
-  def filter_by_date_and_start_and_finish_location(
+  def self.filter_by_date_and_start_and_finish_location(
     first_date,
     last_date,
     start_location,
@@ -17,7 +15,7 @@ class Trip < ActiveRecord::Base
     
     # TODO(gaye): We should be storing these redundantly in the db 
     # so we don't have to do these linear time filterings
-    trips = Trip.where("departure between #{first_date} and #{last_date}")
+    trips = Trip.where(:departure => first_date..last_date)
     trips.delete_if {|trip| 
         Location.distance(start_location, trip.start_location) > max_start_distance_offset}
     trips.delete_if {|trip|

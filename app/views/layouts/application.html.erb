@@ -3,7 +3,6 @@
 <head>
   <title>Rideshare</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "layout", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,19 +13,16 @@
     <%= image_tag "logo2.png" %>
   </div>
   
-  <div id="Selection" align ="center">
-    <ul id="css3menu1" class="topmenu">
-      <li class="topfirst">
-        <%= link_to "Search", root_path %>
-      </li>
-      <li class="topmenu">
-        <%= link_to "Request a Ride", new_ride_path %>
-      </li>
-      <li class="topmenu">
-        <%= link_to "Post a Ride", new_trip_path %>
-      </li>
-    </ul>
-  </div>
+  <table>
+    <tr>
+      <td>
+        <%= link_to 'Search', root_path %>
+      </td>
+      <td>
+        <%= link_to 'Post/Request a Ride', new_trip_path %>
+      </td>
+    </tr>
+  </table>
   
   <%= yield %>
 </div>
