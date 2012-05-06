@@ -15,31 +15,32 @@
     <%= f.label :start_location %>
     <%= f.text_field :start_location, :class => "location_autocomplete" %>
   </div>
+  <br />
   
   <div class="field">
     <%= f.label :finish_location %>
     <%= f.text_field :finish_location, :class => "location_autocomplete" %>
   </div>
+  <br />
   
   <div class="field">
     <%= f.label :departure %>
     <%= f.datetime_select :departure %>
   </div>
-  
-  <div class="field">
-    <%= f.label :arrival %>
-    <%= f.datetime_select :arrival %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <br />
   
   <div class="field">
     <%= f.label :cost %>
     <%= f.text_field :cost %>
   </div>
+  <br />
+  
+  Are you a:
+  <div class="field">
+    Driver <%= f.radio_button :has_driver, true %>
+    Passenger <%= f.radio_button :has_driver, false %>
+  </div>
+  <br />
   
   <div class="actions">
     <%= f.submit %>

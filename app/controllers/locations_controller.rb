@@ -2,10 +2,12 @@ require "net/https"
 require "uri"
 
 class LocationsController < ApplicationController
+  GOOGLE_MAPS = 'maps.googleapis.com'
+  
   def autocomplete_proxy
-    uri = URI.parse(CGI.unescape(params["url"]))
+    uri = URI.parse(CGI.unescape(params['url']))
 
-    if uri.host == "maps.googleapis.com"
+    if uri.host == GOOGLE_MAPS
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE

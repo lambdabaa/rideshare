@@ -21,31 +21,20 @@ ActiveRecord::Schema.define(:version => 20120407150636) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "rides", :force => true do |t|
-    t.integer  "trip_id"
-    t.integer  "passenger_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "rides", ["passenger_id"], :name => "index_rides_on_passenger_id"
-  add_index "rides", ["trip_id"], :name => "index_rides_on_trip_id"
-
   create_table "trips", :force => true do |t|
-    t.integer  "driver_id"
+    t.integer  "user_id"
     t.integer  "start_location_id"
     t.integer  "finish_location_id"
-    t.text     "description"
     t.float    "cost"
-    t.datetime "departure"
-    t.datetime "arrival"
+    t.date     "departure"
+    t.boolean  "has_driver"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "trips", ["driver_id"], :name => "index_trips_on_driver_id"
   add_index "trips", ["finish_location_id"], :name => "index_trips_on_finish_location_id"
   add_index "trips", ["start_location_id"], :name => "index_trips_on_start_location_id"
+  add_index "trips", ["user_id"], :name => "index_trips_on_user_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false
