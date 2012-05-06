@@ -1,0 +1,6 @@
+<div class="trip left">
+  <%= link_to_unless_current "#{trip.has_driver ? 'Offering' : 'Requesting'} a ride", trip %>
+  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for #{trip.cost>0 ? number_to_currency(trip.cost) : 'free'}." %>
+  <br /><br />
+  Posted by: <%= render :partial => 'users/user', :locals => {:user => trip.user} %>
+</div>
