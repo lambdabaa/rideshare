@@ -1,6 +1,7 @@
 <div class="trip">
-  <%= link_to_unless_current "#{trip.has_driver ? 'Looking for' : 'Offering'} a ride", trip %>
-  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for $#{trip.cost}." %>
+  <%= link_to_unless_current "#{trip.has_driver ? 'Offering' : 'Requesting'} a ride", trip %>
+  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for #{number_to_currency(trip.cost)}." %>
+  <%printf trip.start_location.name%>
   <br /><br />
   
   Posted by: <%= render :partial => 'users/user', :locals => {:user => trip.user} %>
