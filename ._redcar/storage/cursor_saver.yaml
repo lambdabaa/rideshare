@@ -1,0 +1,60 @@
+--- 
+cursor_positions: 
+  - :path: app/assets/javascripts/jquery-ui-1.8.19.custom.min.js
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.490000 -04:00
+  - :path: app/assets/javascripts/home.js
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.488000 -04:00
+  - :path: app/assets/javascripts/locations.js.coffee
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.490000 -04:00
+  - :path: app/assets/javascripts/trips.js.coffee
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.491000 -04:00
+  - :path: app/views/trips/edit.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.512000 -04:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.497000 -04:00
+  - :path: app/assets/javascripts/application.js
+    :cursor_offset: 1332
+    :timestamp: 2012-05-06 14:26:57.487000 -04:00
+  - :path: app/views/trips/_form.html.erb
+    :cursor_offset: 360
+    :timestamp: 2012-05-06 14:46:30.284000 -04:00
+  - :path: app/helpers/application_helper.rb
+    :cursor_offset: 24
+    :timestamp: 2012-05-06 14:26:57.501000 -04:00
+  - :path: app/helpers/locations_helper.rb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.502000 -04:00
+  - :path: app/controllers/trips_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.499000 -04:00
+  - :path: app/helpers/users_helper.rb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.503000 -04:00
+  - :path: app/helpers/trips_helper.rb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.502000 -04:00
+  - :path: app/views/trips/show.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.517000 -04:00
+  - :path: app/views/trips/index.html.erb
+    :cursor_offset: 453
+    :timestamp: 2012-05-06 14:48:44.864000 -04:00
+  - :path: app/assets/stylesheets/trips.css.scss
+    :cursor_offset: 294
+    :timestamp: 2012-05-06 15:00:05.946000 -04:00
+  - :path: app/views/trips/_trip.html.erb
+    :cursor_offset: 17
+    :timestamp: 2012-05-06 14:26:57.511000 -04:00
+  - :path: app/assets/stylesheets/locations.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.495000 -04:00
+  - :path: app/assets/stylesheets/application.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-05-06 14:26:57.493000 -04:00
+files_to_retain: 0
