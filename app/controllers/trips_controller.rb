@@ -15,8 +15,8 @@ class TripsController < ApplicationController
              params[:search]['last_date(3i)'].to_i),
           start_location,
           finish_location,
-          params[:search][:max_start_distance_offset] || 5,
-          params[:search][:max_finish_distance_offset] || 5)
+          params[:search][:max_start_distance_offset] || 0.5,
+          params[:search][:max_finish_distance_offset] || 0.5)
     else
       @trips = Trip.all
     end
