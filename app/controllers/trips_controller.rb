@@ -20,6 +20,11 @@ class TripsController < ApplicationController
     else
       @trips = Trip.all
     end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => @trips }
+    end
   end
   
   def show
