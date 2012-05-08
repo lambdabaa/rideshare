@@ -6,6 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'omniauth-facebook'
 
 gem 'json'
 
@@ -23,8 +24,6 @@ end
 
 gem 'jquery-rails'
 
-gem 'omniauth-facebook'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -39,4 +38,3 @@ gem 'omniauth-facebook'
 
 # To use debugger
 # gem 'ruby-debug'
-

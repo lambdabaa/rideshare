@@ -3,18 +3,19 @@ class Location < ActiveRecord::Base
   has_many :trips_finishing_at, :foreign_key => "finish_location_id", :class_name => "Trip"
   
   # TODO(gaye): Add validations
-
-  validates :name, :presence => true, 
- 	        :length => {:maximum => 50} #might not be necessary if implement autocomplete
-
-  validates :latitude, :numericality => true,
-		    :greater_than_or_equal_to => -90,
-		    :less_than_or_equal_to => 90
-
-  validates :longitude, :numericality => true,
-		    :greater_than_or_equal_to => -180,
-		    :less_than_or_equal_to => 180
   
-  # TODO(bayers): Add validations for datetimes
+  def self.distance(a, b)
+    Math.sqrt(
+        ((a.latitude - b.latitude) ** 2) +
+        ((a.longitude - b.longitude) ** 2))
+  end
   
+  def self.get_location(string)
+    if !(location = Location.find_by_name(string)) 
+      latlng = Trip.latlngFinder(string)
+      location = Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) 
+    end
+    
+    location
+  end
 end
