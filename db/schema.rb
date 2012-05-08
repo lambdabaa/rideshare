@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -86,9 +85,10 @@ ActiveRecord::Schema.define(:version => 20120407150636) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "url"
+    t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
 end
->>>>>>> 516c07d7745a79342d0d092cf813f7ed8b0682b7
