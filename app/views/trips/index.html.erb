@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="searchbox" id="search" onclick="this.focus();this.select()" readonly="readonly">
   <%= form_tag('/trips', :method => 'get') do %>
     <%= text_field_tag :start_location, 'From...', {:class => 'location_autocomplete'} %><br /><br />
@@ -14,3 +15,23 @@
 <div id="showTrips">
 <%= render :partial => @trips %>
 </div>
+=======
+<%= form_tag('/trips', :id => 'search') do %>
+  <%= text_field_tag :start_location, 'From...', {:class => 'location_autocomplete'} %><br /><br />
+  <%= text_field_tag :finish_location, 'To...', {:class => 'location_autocomplete'} %><br /><br />
+  
+  Departure Range
+  <br />
+  
+  Start: <%= date_select :search, :first_date %><br />
+  End: <%= date_select :search, :last_date %><br />
+  
+  <div id="go">
+    Search
+  </div>
+<% end %>
+
+<div id="trips">
+  <%= render :partial => @trips %>
+</trips>
+>>>>>>> 161cee66d22ee5279c7dea501afa2f28f501fbd7

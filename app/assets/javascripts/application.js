@@ -28,5 +28,6 @@ $(document).ready(function() {
         }
     ); 
   }
+
   $(".location_autocomplete").autocomplete({source : googleAutocompleteAPI});
 });
