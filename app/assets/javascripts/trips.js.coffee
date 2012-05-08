@@ -13,4 +13,4 @@ $(document).ready ->
   
   $('#go').click ->
     updateTrips()
-    
+

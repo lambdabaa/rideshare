@@ -1,4 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+gareth:
+  id: 1
 
 one:
   provider: MyString
@@ -9,3 +10,4 @@ two:
   provider: MyString
   uid: MyString
   name: MyString
+

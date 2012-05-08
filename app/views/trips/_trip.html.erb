@@ -3,6 +3,6 @@
   <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for $#{trip.cost}." %>
   <br /><br />
   
-    <%= "Posted by:  #{trip.user.name}" %>
+  Posted by:
+  <%= link_to trip.user.name, trip.user.url %>
 </div>
-
