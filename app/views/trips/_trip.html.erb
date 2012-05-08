@@ -1,7 +1,7 @@
-<div class="trip">
+<div class="trip <%= trip.has_driver ? 'left' : 'right' %>">
   <%= link_to_unless_current "#{trip.has_driver ? 'Looking for' : 'Offering'} a ride", trip %>
   <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for $#{trip.cost}." %>
   <br /><br />
   
-    <%= "Posted by:  #{trip.user.name}" %>
+  <%= "Posted by:  #{trip.user.name}" %>
 </div>
