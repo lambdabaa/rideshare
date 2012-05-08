@@ -22,6 +22,23 @@
  text-align: center; 
 }
 
+#go {
+  width: 200px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px;
+  
+  border: 1px solid black;
+  text-align: center;
+  
+  &:hover {
+    cursor: hand;
+    cursor: pointer;
+  }
+}
+
 #post_trip {
   width: 500px;
   margin-left: auto;

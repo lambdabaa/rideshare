@@ -1,2 +1,13 @@
 gareth:
   id: 1
+
+one:
+  provider: MyString
+  uid: MyString
+  name: MyString
+
+two:
+  provider: MyString
+  uid: MyString
+  name: MyString
+

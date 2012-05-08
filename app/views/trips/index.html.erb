@@ -1,15 +1,18 @@
-<div id="search">
-  <%= form_tag('/trips', :method => 'get') do %>
-    <%= text_field_tag :start_location, 'From...', {:class => 'location_autocomplete'} %><br /><br />
-    <%= text_field_tag :finish_location, 'To...', {:class => 'location_autocomplete'} %><br /><br />
-    
-    Departure Range
-    <br />
-    
-    Start: <%= date_select :search, :first_date %><br />
-    End: <%= date_select :search, :last_date %><br />
-    <%= submit_tag 'Search' %>
-  <% end %>
-</div>
+<%= form_tag('/trips', :id => 'search') do %>
+  <%= text_field_tag :start_location, 'From...', {:class => 'location_autocomplete'} %><br /><br />
+  <%= text_field_tag :finish_location, 'To...', {:class => 'location_autocomplete'} %><br /><br />
+  
+  Departure Range
+  <br />
+  
+  Start: <%= date_select :search, :first_date %><br />
+  End: <%= date_select :search, :last_date %><br />
+  
+  <div id="go">
+    Search
+  </div>
+<% end %>
 
-<%= render :partial => @trips %>
+<div id="trips">
+  <%= render :partial => @trips %>
+</trips>
