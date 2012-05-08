@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<div class="facebook">
+	<% if current_user %>
+  	Welcome, <%= current_user.name %>! <br>
+  	<%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
+	<% else %>
+  	<%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
+	<% end %>
+</div>
+
 <div class="bigbox">
   <div id="logo" align = "center">
     <%= image_tag "logo2.png" %>
