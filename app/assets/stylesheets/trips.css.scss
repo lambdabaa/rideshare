@@ -72,3 +72,38 @@ a.ui-state-hover {
   color: #003854;
   font-weight: bold;
 }
+
+#trip {
+  width: 600px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  border: 1px solid black;
+  
+  text-align: center;
+  
+  table {
+    width: 100%;
+  }
+  
+  #title {
+    color: #223E92;
+    font-size: 30px;
+  }
+}
+
+#comments { 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#map {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  height: 400px;
+  width: 600px;
+}
