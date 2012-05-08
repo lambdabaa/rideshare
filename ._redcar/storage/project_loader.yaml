@@ -1,9 +1,0 @@
---- 
-open_files: 
-  - app/assets/stylesheets/locations.css.scss
-  - app/assets/stylesheets/trips.css.scss
-  - app/views/trips/_trip.html.erb
-  - app/views/trips/edit.html.erb
-  - app/views/trips/index.html.erb
-  - app/views/trips/new.html.erb
-  - app/views/trips/show.html.erb

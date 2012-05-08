@@ -15,10 +15,15 @@ class TripsController < ApplicationController
              params[:search]['last_date(3i)'].to_i),
           start_location,
           finish_location,
-          params[:search][:max_start_distance_offset] || 5,
-          params[:search][:max_finish_distance_offset] || 5)
+          params[:search][:max_start_distance_offset] || 0.5,
+          params[:search][:max_finish_distance_offset] || 0.5)
     else
       @trips = Trip.all
+    end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => @trips }
     end
   end
   
@@ -37,7 +42,8 @@ class TripsController < ApplicationController
   def create
     params[:trip][:start_location_id] = Location.get_location(params[:trip].delete(:start_location)).id
     params[:trip][:finish_location_id] = Location.get_location(params[:trip].delete(:finish_location)).id
-
+    params[:trip][:user] = current_user
+    
     @trip = Trip.new(params[:trip])
     
     respond_to do |format|
