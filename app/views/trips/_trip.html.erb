@@ -1,7 +1,32 @@
 <div class="trip <%= trip.has_driver ? 'left' : 'right' %>">
-  <%= link_to_unless_current "#{trip.has_driver ? 'Offering' : 'Requesting'} a ride", trip %>
-  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for #{trip.cost>0 ? number_to_currency(trip.cost) : 'free'}." %>
-  <br /><br />
-  Posted by:
-  <%= link_to trip.user.name, trip.user.url %>
+  
+  <div class='leftcolumn'>
+    <% if trip.has_driver %>
+      <%= image_tag trip.user.image %>
+      <br />
+      <%= link_to trip.user.name, trip.user.url %>
+    <% else %>
+      <%= trip.cost>0 ? number_to_currency(trip.cost) : 'free' %>
+    <% end %>
+  </div>
+  
+  <div class='middlecolumn'>
+    <%= link_to_unless_current "#{trip.has_driver ? 'Offering' : 'Requesting'} a ride...", trip %>
+    <br />
+    <%= "#{trip.start_location.name} "%> &#8594; <%=" #{trip.finish_location.name}" %>
+    <br />
+    <%= "#{trip.departure.strftime("%A, %B %d, %Y at %I%p")}" %>
+  </div>
+  
+  <div class='rightcolumn'>
+    <% if trip.has_driver %>
+      <%= trip.cost>0 ? number_to_currency(trip.cost) : 'free' %>
+    <% else %>
+      <%= image_tag trip.user.image %>
+      <br />
+      <%= link_to trip.user.name, trip.user.url %>
+    <% end %>
+  </div>
+  
+<br />
 </div>

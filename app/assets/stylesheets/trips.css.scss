@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.facebook {
+  color: white;
+}
+
 body {
   background: -webkit-gradient(linear, left bottom, left top, from(#007BA1), to(#002640)) fixed;
   background: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%) fixed;
@@ -9,6 +13,15 @@ body {
   background-repeat: no-repeat;
 
 }
+
+#leftNav {
+
+}
+
+#rightNav {
+
+}
+
 
 #showTrips{
 	width: 620px; 
@@ -96,7 +109,28 @@ a.ui-state-hover {
 }
 
 
+.leftcolumn {
+  float: left;
+  display: inline;
+  text-align: center;
+  image-align: center;
+}
 
+.middlecolumn {
+  float: left;
+  display: inline;
+}
+
+.rightcolumn {
+  display: inline;
+  float: left;
+  text-align: center;
+  image-align: center;
+}
+
+.trip {
+  height: 61px;
+}
 
 /* Variant : for left positioned triangle
 ------------------------------------------ */

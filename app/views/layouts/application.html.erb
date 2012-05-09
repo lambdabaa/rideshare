@@ -22,16 +22,13 @@
     <%= image_tag "logo2.png" %>
   </div>
   
-  <table>
-    <tr>
-      <td>
-        <%= link_to 'Search', root_path %>
-      </td>
-      <td>
-        <%= link_to 'Post/Request a Ride', new_trip_path %>
-      </td>
-    </tr>
-  </table>
+<div class="leftNav">
+  <%= link_to 'Search', root_path %>
+</div>
+
+<div class="rightNav">
+  <%= link_to 'Post/Request a Ride', new_trip_path %>
+</div>
   
   <%= yield %>
 </div>
