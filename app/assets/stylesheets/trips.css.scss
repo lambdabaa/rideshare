@@ -4,6 +4,7 @@
 
 .facebook {
   color: white;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 body {
@@ -109,28 +110,43 @@ a.ui-state-hover {
 }
 
 
-.leftcolumn {
-  float: left;
-  display: inline;
+
+
+
+
+table.tripdisplay {
+  height: 60px;
+  width: 575px;
+  color: #333333;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+
+table.tripdisplay td.left {
   text-align: center;
   image-align: center;
+  width: 15%;
+  font-size: small;
 }
 
-.middlecolumn {
-  float: left;
-  display: inline;
+table.tripdisplay td.middle {
+  width: 70%;
+  text-align: center;
+  font-size: medium;
 }
 
-.rightcolumn {
-  display: inline;
-  float: left;
+table.tripdisplay td.right {
   text-align: center;
   image-align: center;
+  width: 15%;
+  font-size: small;
 }
 
-.trip {
-  height: 61px;
+.price {
+  font-size: xx-large;
 }
+
+
 
 /* Variant : for left positioned triangle
 ------------------------------------------ */
