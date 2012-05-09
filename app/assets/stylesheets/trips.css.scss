@@ -4,6 +4,10 @@
 
 body {
   background: -webkit-gradient(linear, left bottom, left top, from(#007BA1), to(#002640)) fixed;
+  background: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%) fixed;
+  background-image: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%);
+  background-repeat: no-repeat;
+
 }
 
 #showTrips{
