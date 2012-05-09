@@ -1,5 +1,0 @@
---- 
-open_files: 
-  - app/views/trips/index.html.erb
-  - app/assets/stylesheets/trips.css.scss
-  - app/views/layouts/application.html.erb
