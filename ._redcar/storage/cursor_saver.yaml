@@ -1,0 +1,18 @@
+--- 
+cursor_positions: 
+  - :path: app/assets/javascripts/trips.js.coffee
+    :cursor_offset: 797
+    :timestamp: 2012-05-08 19:47:49.168000 -04:00
+  - :path: app/views/trips/_trip.html.erb
+    :cursor_offset: 278
+    :timestamp: 2012-05-08 20:01:43.785000 -04:00
+  - :path: app/views/trips/index.html.erb
+    :cursor_offset: 370
+    :timestamp: 2012-05-09 15:40:03.788000 -04:00
+  - :path: app/assets/stylesheets/trips.css.scss
+    :cursor_offset: 517
+    :timestamp: 2012-05-09 15:39:41.289000 -04:00
+  - :path: app/views/layouts/application.html.erb
+    :cursor_offset: 754
+    :timestamp: 2012-05-09 15:39:50.216000 -04:00
+files_to_retain: 0
