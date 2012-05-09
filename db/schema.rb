@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20120407150636) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "url"
+    t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
