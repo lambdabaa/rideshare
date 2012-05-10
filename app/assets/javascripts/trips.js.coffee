@@ -13,4 +13,17 @@ $(document).ready ->
   
   $('#go').click ->
     updateTrips()
+  
+  $('#start_location').focus( ->
+    $(this).val('');
+  )
+  $('#start_location').blur( ->
+    $(this).val('From...') if ($(this).val() == '')
+  )
 
+  $('#end_location').focus( ->
+    $(this).val('');
+  )
+  $('#end_location').blur( ->
+    $(this).val('To..') if ($(this).val() == '')
+  )
