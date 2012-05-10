@@ -11,29 +11,29 @@
 <body>
 
 <div class="facebook">
-	<div class="fb-like" data-href="http://www.facebook.com/pages/Middlebury-Ride-Share/342362625817051" data-send="false" data-width="50" data-show-faces="false"></div>
+	<div class="fb-like" data-href="http://www.facebook.com/pages/Middlebury-Ride-Share/342362625817051" data-send="false" data-width="40" data-show-faces="false"></div>
 	<div class="fb-login">
-	<% if current_user %>
-  	Welcome, <%= current_user.name %>! <br>
-  	<%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
-	<% else %>
-  	<%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
-	<% end %>
+	  <% if current_user %>
+  	    Welcome, <%= current_user.name %>! <br>
+  	    <%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
+	  <% else %>
+  	    <%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
+	  <% end %>
 	</div>
 </div>
 
 <div class="bigbox">
-  <div id="logo" align = "center">
+  <div id="logo">
     <%= image_tag "logo2.png" %>
   </div>
   
   <table align="center">
     <tr>
       <td>
-        <%= link_to 'Search', root_path %>
+        <%= link_to 'Search', root_path, :class => 'button' %>
       </td>
       <td>
-        <%= link_to 'Post/Request a Ride', new_trip_path %>
+        <%= link_to 'Offer/Request a Ride', new_trip_path, :class => 'button' %>
       </td>
     </tr>
   </table>
