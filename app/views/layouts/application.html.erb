@@ -8,33 +8,31 @@
 </head>
 <body>
 
-<div class="facebook">
-	<% if current_user %>
-  	Welcome, <%= current_user.name %>! <br>
-  	<%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
-	<% else %>
-  	<%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
-	<% end %>
-</div>
+  <div class="facebook">
+  	<% if current_user %>
+    	Welcome, <%= current_user.name %>! <br>
+    	<%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
+  	<% else %>
+    	<%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
+  	<% end %>
+  </div>
 
-<div class="bigbox">
   <div id="logo" align = "center">
     <%= image_tag "logo2.png" %>
   </div>
   
-  <table>
+  <table align = "center">
     <tr>
       <td>
-        <%= link_to 'Search', root_path %>
+        <%= link_to 'Search', root_path, :class => 'button' %>
       </td>
       <td>
-        <%= link_to 'Post/Request a Ride', new_trip_path %>
+        <%= link_to 'Post/Request a Ride', new_trip_path, :class => 'button' %>
       </td>
     </tr>
   </table>
   
   <%= yield %>
-</div>
 
 </body>
 </html>
