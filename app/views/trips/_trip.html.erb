@@ -1,8 +1,37 @@
-<div class="trip">
-  <%= link_to_unless_current "#{trip.has_driver ? 'Looking for' : 'Offering'} a ride", trip %>
-  <%= "from #{trip.start_location.name} to #{trip.finish_location.name} on #{trip.departure} for $#{trip.cost}." %>
-  <br /><br />
+<div class="trip <%= trip.has_driver ? 'left' : 'right' %>">
   
-  Posted by:
-  <%= link_to trip.user.name, trip.user.url %>
+  <table class='tripdisplay'>
+    <tr>
+      
+      <td class='left'>
+        <% if trip.has_driver %>
+          <%= image_tag trip.user.image, :width => 75, :height => 75 %>
+          <br />
+          <%= link_to trip.user.name, trip.user.url %>
+        <% else %>
+          <div class='price'><%= trip.cost>0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
+        <% end %>
+      </td>
+  
+      <td class='middle'>
+        <%= link_to_unless_current "#{trip.has_driver ? 'Offering' : 'Requesting'} a ride...", trip %>
+        <br />
+        <%= trip.start_location.name %> &#8594; <%= trip.finish_location.name %>
+        <br />
+        <%= trip.departure.strftime("%A, %B %d, %Y at %I%p") %>
+      </td>
+  
+      <td class='right'>
+        <% if trip.has_driver %>
+          <div class='price'><%= trip.cost>0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
+        <% else %>
+          <%= image_tag trip.user.image, :width => 75, :height => 75 %>
+          <br />
+          <%= link_to trip.user.name, trip.user.url %>
+        <% end %>
+      </td>
+      
+    </tr>
+  </table>
+
 </div>

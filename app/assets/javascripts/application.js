@@ -17,12 +17,12 @@ $(document).ready(function() {
   googleAutocompleteAPI = function(query, add) {
     BASE_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=";
     API_KEY = "AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA";
-    
-    $.getJSON("/locations/autocomplete_proxy?url=" + escape(BASE_URL + query.term + "&types=geocode&sensor=true" + "&key=" + API_KEY), 
+    MIDD_COORDS = "44.0153,-73.1678";
+    $.getJSON("/locations/autocomplete_proxy?url=" + escape(BASE_URL + query.term + "&types=geocode&sensor=true" + "&location=" + MIDD_COORDS + "&radius=500" + "&key=" + API_KEY), 
         function(data) {
           var suggestions = [];      
           $.each(data.predictions, function(i, val) {  
-            suggestions.push(val["description"]);  
+            suggestions.push(val["description"].replace(", United States", ""));  
           });
           add(suggestions);
         }
