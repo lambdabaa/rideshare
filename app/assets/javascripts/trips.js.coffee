@@ -25,13 +25,13 @@ $(document).ready ->
   # trips#index
   updateTrips = ->
     $.get('trips/', $('#search').serialize(), (data, status, xhr) -> 
-      $('#trips').animate({ opacity : 0 }, ->
-        $('#trips').html($('#trips', $(data)).html())
-        $('#trips').animate({ opacity : 1.0 })
+      $('#showTrips').animate({ opacity : 0 }, ->
+        $('#showTrips').html($('#showTrips', $(data)).html())
+        $('#showTrips').animate({ opacity : 1.0 })
       )
     )
   
-  $('#go').click ->
+  $('.button').click ->
     updateTrips()
   
   $('#start_location').focus( ->
