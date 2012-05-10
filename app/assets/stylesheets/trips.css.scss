@@ -1,6 +1,7 @@
 // Place all the styles related to the Trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins.css.scss";
 
 .trip {
   width: 600px;
@@ -71,4 +72,100 @@ li.ui-menu-item {
 a.ui-state-hover {
   color: #003854;
   font-weight: bold;
+}
+
+#trip {
+  width: 600px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  text-align: center;
+  
+  table {
+    width: 100%;
+  }
+  
+  #title {
+    color: #223E92;
+    background-color: white;
+
+    font-size: 30px;
+    
+    @include rounded-side(top-right);
+    @include rounded-side(top-left);
+    
+    height: 60px;
+    padding-top: 20px;
+  }
+  
+  #user_link {
+    a {
+      color: #223E92;
+      &:hover{ color: black;}
+      text-decoration: none;
+    }
+    
+    height: 40px;
+    padding-top: 15px;
+
+    background-color: white;
+    
+    @include shadow(inset 4px 4px 12px rgba(0,0,0,0.2));
+    @include rounded-side(bottom-right);
+    @include rounded-side(bottom-left);
+  }
+  
+  #from {
+    float: left;
+  }
+  
+  #arrow {
+    float: left;
+    
+    position: relative;
+    left: 120px;
+  }
+  
+  #to {
+    float: left;
+        
+    position: relative;
+    left: 210px;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .white_circle {
+    background-color: white;
+    
+    display: block;
+    height: 64px;
+    width: 64px;
+    
+    @include rounded(64px);
+    
+    padding: 32px;
+  }
+}
+
+#comments {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 450px;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#map {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  height: 400px;
+  width: 600px;
 }
