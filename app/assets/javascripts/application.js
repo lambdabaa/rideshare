@@ -22,7 +22,7 @@ $(document).ready(function() {
         function(data) {
           var suggestions = [];      
           $.each(data.predictions, function(i, val) {  
-            suggestions.push(val["description"]);  
+            suggestions.push(val["description"].replace(", United States", ""));  
           });
           add(suggestions);
         }
