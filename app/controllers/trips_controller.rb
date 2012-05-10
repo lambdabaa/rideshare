@@ -43,7 +43,7 @@ class TripsController < ApplicationController
     params[:trip][:start_location_id] = Location.get_location(params[:trip].delete(:start_location)).id
     params[:trip][:finish_location_id] = Location.get_location(params[:trip].delete(:finish_location)).id
     params[:trip][:user] = current_user
-    
+
     @trip = Trip.new(params[:trip])
     
     respond_to do |format|
