@@ -1,27 +1,19 @@
-<script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
 <div id="trip">
   <div id="title">
-    <% if @trip.has_driver%>
-      I'm looking for a ride!
-    <% else %>
-      I have an open seat in my car!
-    <% end %>
+    <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
   </div>
-
+  <div id="user_link">
+    <%= link_to @trip.user.name, @trip.user.url %>    
+  </div>
   <br />
-  <table><tr>
-    <td>
-      From: <br />
-      <span id="from"><%= @trip.start_location.name %></span>
-    </td>
-    <td>
-      To: <br />
-      <span id="to"><%= @trip.finish_location.name %></span>
-    </td>
-  </tr></table>
-  By: <%= @trip.user.name %>  
+  <div id="from" class="white_circle"> 
+    <%= @trip.start_location.name %>
+  </div>
+  <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
+  <div id="to" class="white_circle">
+    <%= @trip.finish_location.name %>
+  </div>
+  <div class="clear"></div>
 </div>
 
 <div id="map"></div>
