@@ -88,14 +88,21 @@ a.ui-state-hover {
 #trip {
   width: 600px;
   
-  margin-left: auto;
-  margin-right: auto;
+  table {
+    position: relative;
+    left: 150px;
+  
+    td {
+      padding: 30px;
+    }
+  
+    #comments {
+      position: relative;
+      top: -280px;
+    }
+  }
   
   text-align: center;
-  
-  table {
-    width: 100%;
-  }
   
   #title {
     color: #223E92;
