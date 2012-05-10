@@ -3,63 +3,74 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "mixins.css.scss";
 
+.facebook {
+  color: white;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+body {
+  background: -webkit-gradient(linear, left bottom, left top, from(#007BA1), to(#002640)) fixed;
+  background: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%) fixed;
+  background-image: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%);
+  background-repeat: no-repeat;
+}
+
+
+#showTrips{
+	width: 620px; 
+	margin-left:auto;
+	margin-right:auto;
+}
+
 .trip {
-  width: 600px;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  
-  border: 1px solid black;
+  position:relative;
+	padding:15px;
+  width: 580px; 
+	margin:1em 0 3em;
+	border:5px solid #5a8f00;
+	color:#333;
+	background:#fff;
+  -webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
 }
 
 #search {
- width: 500px;
- margin-left: auto;
- margin-right: auto;
- padding: 10px;
- 
- border: 1px solid black;
- text-align: center; 
+  padding: 10px;
+	width: 620px; 
+	margin-left:auto;
+	margin-right:auto;
+	background:#C2DFFF;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+  -moz-box-shadow: 4px 4px 5px #444;
+  -webkit-box-shadow: 4px 4px 5px #444;
+	box-shadow: 4px 4px 5px #444;
+  text-align: center;
 }
 
-#go {
-  width: 200px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4px;
-  
-  border: 1px solid black;
-  text-align: center;
-  
-  &:hover {
-    cursor: hand;
-    cursor: pointer;
-  }
-}
 
 #post_trip {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px;
-  
-  border: 1px solid black;
+	width: 620px; 
+	margin-left:auto;
+	margin-right:auto;
+	background:#C2DFFF;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+  -moz-box-shadow: 4px 4px 5px #444;
+  -webkit-box-shadow: 4px 4px 5px #444;
+	box-shadow: 4px 4px 5px #444;
   text-align: center;
 }
 
 ul.ui-corner-all {
   width: 250px;
   padding: 0px 5px;
-  
-  background-color: white;
-  
+  background-color: white;  
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-  
   -moz-box-shadow:    0px 1px 1px 1px grey;
   -webkit-box-shadow: 0px 1px 1px 1px grey;
   box-shadow:         0px 1px 1px 1px grey;
@@ -169,3 +180,162 @@ a.ui-state-hover {
   height: 400px;
   width: 600px;
 }
+
+.button {
+	box-shadow: 4px 4px 5px #444;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#101010;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#000000;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+table.tripdisplay {
+  height: 60px;
+  width: 575px;
+  color: #333333;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+
+table.tripdisplay td.left {
+  text-align: center;
+  image-align: center;
+  width: 15%;
+  font-size: small;
+}
+
+table.tripdisplay td.middle {
+  width: 70%;
+  text-align: center;
+  font-size: medium;
+}
+
+table.tripdisplay td.right {
+  text-align: center;
+  image-align: center;
+  width: 15%;
+  font-size: small;
+}
+
+.price {
+  font-size: xx-large;
+}
+
+
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.trip.left {
+  	margin-left:30px;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.trip.right {
+	margin-right:30px;
+}
+.trip:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+	border-style:solid;
+  border-color:#5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block; 
+  width:0;
+}
+
+/* creates the smaller  triangle */
+.trip:after {
+	content:"";
+	position:absolute;
+	bottom:-13px; /* value = - border-top-width - border-bottom-width */
+	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+	border-width:13px 13px 0;
+	border-style:solid;
+	border-color:#fff transparent;
+  /* reduce the damage in FF3.0 */
+  display:block; 
+  width:0;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+/* creates the larger triangle */
+.trip.left:before {
+	top:10px; /* controls vertical position */
+	bottom:auto;
+	left:-30px; /* value = - border-left-width - border-right-width */
+	border-width:15px 30px 15px 0;
+	border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.trip.left:after {
+	top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+	bottom:auto;
+	left:-21px; /* value = - border-left-width - border-right-width */
+	border-width:9px 21px 9px 0;
+	border-color:transparent #fff;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+/* creates the larger triangle */
+.trip.right:before {
+	top:10px; /* controls vertical position */
+	bottom:auto;
+  left:auto;
+	right:-30px; /* value = - border-left-width - border-right-width */
+	border-width:15px 0 15px 30px;
+	border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.trip.right:after {
+	top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+	bottom:auto;
+  left:auto;
+	right:-21px; /* value = - border-left-width - border-right-width */
+	border-width:9px 0 9px 21px;
+	border-color:transparent #fff;
+}
+
