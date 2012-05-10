@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
   def index
+    p params
+    
     if params[:search]
       start_location = Location.get_location(params[:start_location])
       finish_location = Location.get_location(params[:finish_location])
