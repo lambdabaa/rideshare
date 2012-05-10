@@ -5,15 +5,16 @@
     
     Departure Range
     <br />
-    
     Start: <%= date_select :search, :first_date %><br />
     End: <%= date_select :search, :last_date %><br />
 
     <div class="button">
       Search
     </div>
+    
   <% end %>
 </div>
+
 <div id="showTrips">
   <%= render :partial => @trips.reverse %>
 </div>
