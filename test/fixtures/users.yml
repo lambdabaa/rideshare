@@ -1,13 +1,9 @@
 gareth:
   id: 1
 
-one:
-  provider: MyString
-  uid: MyString
-  name: MyString
-
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
-
+brian:
+  provider: facebook
+  uid: 122
+  name: Brian Ayers
+  url: facebook_link
+  image: image_link
