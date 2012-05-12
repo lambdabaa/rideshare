@@ -1,9 +1,9 @@
 gareth:
   id: 1
 
-brian:
+tommy:
   provider: facebook
   uid: 122
-  name: Brian Ayers
+  name: Tommy Jones
   url: facebook_link
   image: image_link
