@@ -21,12 +21,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(new_entry.image, @tommy.image)
   end
   
-  test "should find past user from the database" do
-    user = User.find_by_provider_and_uid(@auth["provider"], @auth["uid"])
-    assert_equal(user.name, @tommy.name)
-    assert_equal(user.provider, @tommy.provider)
-    assert_equal(user.uid, @tommy.uid)
-    assert_equal(user.url, @tommy.url)
-    assert_equal(user.image, @tommy.image)
+  test "should update an existing user with any changes" do
+    auth2 = { "provider" => 'facebook', "uid" => '122', "info" => {"name" => 'Frank', "urls" => {"Facebook" => 'new_url'}, "image" =>'new_image' }}
+    new_user = User.update_with_omniauth(auth2)
+    assert_equal(new_user.name, 'Frank')
+    assert_equal(new_user.provider, 'facebook')
+    assert_equal(new_user.uid, '122')
+    assert_equal(new_user.url, 'new_url')
+    assert_equal(new_user.image, 'new_image')
   end
 end
