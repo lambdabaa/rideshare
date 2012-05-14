@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     	end
 
    		session[:user_id] = user.id
-    	redirect_to root_url, :notice => "Signed in!"
+    	redirect_to Rails.cache.read("return_url"), :notice => "Signed in!"
   end
 
   def destroy

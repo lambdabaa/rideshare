@@ -17,6 +17,7 @@
   	Welcome, <%= current_user.name %>! <br>
   	<%= link_to image_tag( 'facebook-logout-button.png'), signout_path %>
 	<% else %>
+	<% Rails.cache.write("return_url",request.url) %>
   	<%= link_to image_tag( 'facebook-login-button.png'), "/auth/facebook" %>
 	<% end %>
 	</div>
