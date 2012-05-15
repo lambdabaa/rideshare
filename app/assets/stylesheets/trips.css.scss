@@ -11,12 +11,12 @@
 .fb-like {
   float:right;
   background: white;
-  -moz-border-radius: 15px;
-	border-radius: 15px;
+  -moz-border-radius: 9px;
+	border-radius: 9px;
   -moz-box-shadow: 4px 4px 5px #444;
   -webkit-box-shadow: 4px 4px 5px #444;
 	box-shadow: 4px 4px 5px #444;
-	padding: 5px;
+	padding: 8px;
 }
 
 #logo {
@@ -117,6 +117,7 @@ a.ui-state-hover {
     #comments {
       position: relative;
       top: -280px;
+      float: left;
     }
   }
   
@@ -191,9 +192,9 @@ a.ui-state-hover {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 450px;
-  
   margin-left: auto;
   margin-right: auto;
+  float: left;
 }
 
 #map {
