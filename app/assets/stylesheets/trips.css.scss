@@ -116,6 +116,7 @@ a.ui-state-hover {
     }
   
     #comments {
+      position: top;
       float: left;
       background: white;
       -moz-border-radius: 9px;
@@ -195,8 +196,6 @@ a.ui-state-hover {
 }
 
 #comments {
-  margin-top: 20px;
-  margin-bottom: 20px;
   width: 450px;
   margin-left: auto;
   margin-right: auto;
