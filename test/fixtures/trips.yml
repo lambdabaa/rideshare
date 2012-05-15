@@ -3,7 +3,7 @@ middlebury_to_boston:
   start_location: middlebury
   finish_location: boston
   cost: 10.00
-  departure: <%= Time.now %>
+  departure: <%= Time.now + 60 * 60 * 24 %>
   has_driver: true
 
 boston_to_middlebury:
@@ -11,5 +11,5 @@ boston_to_middlebury:
   start_location: boston
   finish_location: middlebury
   cost: 10.00
-  departure: <%= Time.now %>
+  departure: <%= Time.now + 60 * 60 * 24 %>
   has_driver: false
