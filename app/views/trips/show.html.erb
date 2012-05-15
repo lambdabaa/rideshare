@@ -1,30 +1,36 @@
 <div id="trip">
-  <table>
-  <tr>
-    <td>  
-    <div id="title">
-      <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
-    </div>
-    <div id="user_link">
-      <%= link_to @trip.user.name, @trip.user.url %>    
-    </div>
-    <br />
-    <div id="from" class="white_circle"> 
-      <%= @trip.start_location.name %>
-    </div>
-    <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
-    <div id="to" class="white_circle">
-      <%= @trip.finish_location.name %>
-    </div>
-    <div class="clear"></div>
-
-    <div id="map"></div>
-    </td>
-    <td>
-      <div id="comments">
+  <table id='trip_show_table'>
+    <tr>
+      <td>  
+        <div id="title">
+          <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
+        </div>
+      
+        <div id="user_link">
+          <%= link_to @trip.user.name, @trip.user.url %>    
+        </div>
+    
+        <br/>
+      
+        <div id="from" class="white_circle"> 
+          <%= @trip.start_location.name %>
+        </div>
+    
+        <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
+        
+        <div id="to" class="white_circle">
+          <%= @trip.finish_location.name %>
+        </div>
+    
+        <div class="clear"></div>
+        <div id="map"></div>
+      </td>
+    
+      <td id='comments_section'>
         <div id="fb-root"></div>
-        <div class="fb-comments" data-href=<%= request.url %> data-num-posts="10" data-width="470"></div>
-      </div>
-    </td>
+        <div class="fb-comments" data-href=<%= request.url %> data-num-posts="10" data-width="450"></div>
+      </td>
+      
+    </tr>
   </table>
 </div>

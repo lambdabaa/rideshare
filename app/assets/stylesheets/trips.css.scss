@@ -95,23 +95,6 @@ a.ui-state-hover {
   color: #003854;
   font-weight: bold;
 }
-
-#trip {
-  width: 600px;
-  
-  table {
-    position: relative;
-    left: 150px;
-  
-    td {
-      padding: 30px;
-    }
-  
-    #comments {
-      position: relative;
-      top: -280px;
-    }
-  }
   
   text-align: center;
   
@@ -180,15 +163,32 @@ a.ui-state-hover {
   }
 }
 
-#comments {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 450px;
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  background: white;
-}
+#trip {
+  width: 600px;
+  
+  table.trip_show_table {
+    position: relative;
+    left: 150px;
+  
+    td {
+      padding: 30px;
+    }
+    
+    table.trip_show_table td.comments_section {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 450px;
+      position: fixed;
+      margin-left: auto;
+      margin-right: auto;
+      background: white;
+    }
+  
+    #comments {
+      position: relative;
+      top: -280px;
+    }
+  }
 
 #map {
   margin-top: 20px;
