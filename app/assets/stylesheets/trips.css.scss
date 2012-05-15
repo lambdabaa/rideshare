@@ -115,9 +115,9 @@ a.ui-state-hover {
     }
   
     #comments {
-      position: relative;
-      top: -280px;
+      position: fixed;
       float: left;
+      background: white;
     }
   }
   
@@ -195,6 +195,8 @@ a.ui-state-hover {
   margin-left: auto;
   margin-right: auto;
   float: left;
+  position: fixed;
+  background: white;
 }
 
 #map {
