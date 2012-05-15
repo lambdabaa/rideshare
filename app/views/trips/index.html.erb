@@ -6,9 +6,9 @@
     Departure Range
     <br />
     <br />
-    Start: <%= date_select :search, :first_date %><br />
+    Start: <%= date_select :search, :first_date, :start_year => Date.today.year, :end_year => Date.today.year+1  %><br />
     <br />
-    End: <%= date_select :search, :last_date %><br />
+    End: <%= date_select :search, :last_date, :start_year => Date.today.year, :end_year => Date.today.year+1  %><br />
     <br />
   <% end %>
   
