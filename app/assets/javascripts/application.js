@@ -25,7 +25,7 @@ $(document).ready(function() {
           var suggestions = [];      
           // iterate over the predictions returned by google maps
           $.each(data.predictions, function(i, val) {  
-              country = countryPattern.exec(val["description"])[1];
+              country = COUNTRY_PATTERN.exec(val["description"])[1];
               // add those from the US and Canada
               if (country == "United States" || country == "Canada")
                 // remove the name of the country
