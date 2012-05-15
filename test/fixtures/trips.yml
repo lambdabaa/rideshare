@@ -1,5 +1,5 @@
 middlebury_to_boston:
-  user: gareth
+  user_id: 1
   start_location: middlebury
   finish_location: boston
   cost: 10.00
@@ -7,7 +7,7 @@ middlebury_to_boston:
   has_driver: true
 
 boston_to_middlebury:
-  user: gareth
+  user_id: 1
   start_location: boston
   finish_location: middlebury
   cost: 10.00

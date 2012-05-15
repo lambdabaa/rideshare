@@ -1,5 +1,6 @@
 gareth:
   id: 1
+  name: "Gareth Aye"
 
 one:
   provider: MyString
@@ -10,4 +11,3 @@ two:
   provider: MyString
   uid: MyString
   name: MyString
-
