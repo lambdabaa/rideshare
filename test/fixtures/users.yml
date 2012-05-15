@@ -1,13 +1,12 @@
 gareth:
   id: 1
+  name: "Gareth Aye"
+  image: "http://graph.facebook.com/1366590149/picture?type=square"
+  url: "http://www.facebook.com/gareth.aye"
 
-one:
-  provider: MyString
-  uid: MyString
-  name: MyString
-
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
-
+tommy:
+  provider: facebook
+  uid: 122
+  name: Tommy Jones
+  url: facebook_link
+  image: image_link
