@@ -40,14 +40,20 @@ class TripsController < ApplicationController
   end
   
   def create
-    params[:trip][:start_location_id] = Location.get_location(params[:trip].delete(:start_location)).id
-    params[:trip][:finish_location_id] = Location.get_location(params[:trip].delete(:finish_location)).id
-    params[:trip][:user] = current_user
-
-    @trip = Trip.new(params[:trip])
+    start_location = Location.get_location(params[:trip].delete(:start_location))
+    end_location = Location.get_location(params[:trip].delete(:finish_location))
+    valid = false;
     
+    if (start_location && end_location)
+      params[:trip][:start_location_id] = start_location.id
+      params[:trip][:finish_location_id] = end_location.id
+      params[:trip][:user] = current_user
+      valid = true
+    end
+    @trip = Trip.new(params[:trip])
+    @trip.errors.add(:start_location, "Invalid location entered") unless (valid)
     respond_to do |format|
-      if @trip.save
+      if @trip.save && valid
         format.html { redirect_to @trip, :notice => "Created a new trip" }
       else
         format.html { render :action => 'new' }

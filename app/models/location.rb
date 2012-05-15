@@ -2,7 +2,8 @@ class Location < ActiveRecord::Base
   has_many :trips_starting_at,  :foreign_key => "start_location_id",  :class_name => "Trip"
   has_many :trips_finishing_at, :foreign_key => "finish_location_id", :class_name => "Trip"
   
-  # TODO(gaye): Add validations
+  validates :latitude, :presence => true
+  validates :longitude, :presence => true
   
   def self.distance(a, b)
     Math.sqrt(
@@ -13,7 +14,7 @@ class Location < ActiveRecord::Base
   def self.get_location(string)
     if !(location = Location.find_by_name(string)) 
       latlng = Trip.latlngFinder(string)
-      location = Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) 
+      location = Location.create(:name => string, :latitude => latlng["lat"], :longitude => latlng["lng"]) if latlng != nil
     end
     
     location
