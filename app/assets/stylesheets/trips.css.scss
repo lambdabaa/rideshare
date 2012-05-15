@@ -5,13 +5,11 @@
 
 .facebook {
   color: white;
-  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .fb-like {
   float:right;
-  color: white;
-  font-family: Tahoma, Geneva, sans-serif;
+  background: white;
 }
 
 #logo {
@@ -25,6 +23,7 @@ body {
   background: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%) fixed;
   background-image: -moz-linear-gradient(bottom left, #007BA1 0%, #002640 100%);
   background-repeat: no-repeat;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -185,11 +184,10 @@ a.ui-state-hover {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 450px;
-  
+  position: fixed;
   margin-left: auto;
   margin-right: auto;
-  font-family: Tahoma, Geneva, sans-serif;
-  color: white;
+  background: white;
 }
 
 #map {
