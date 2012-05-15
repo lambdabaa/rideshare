@@ -10,6 +10,12 @@
 .fb-like {
   float:right;
   background: white;
+  -moz-border-radius: 15px;
+	border-radius: 15px;
+  -moz-box-shadow: 4px 4px 5px #444;
+  -webkit-box-shadow: 4px 4px 5px #444;
+	box-shadow: 4px 4px 5px #444;
+	padding: 5px;
 }
 
 #logo {
@@ -96,6 +102,8 @@ a.ui-state-hover {
   font-weight: bold;
 }
   
+  text-align: center;
+  
   #title {
     color: #223E92;
     background-color: white;
@@ -161,32 +169,14 @@ a.ui-state-hover {
   }
 }
 
-#trip {
-  width: 600px;
-  
-  table.trip_show_table {
-    position: relative;
-    left: 150px;
-  
-    td {
-      padding: 30px;
-    }
-    
-    table.trip_show_table td.comments_section {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      width: 450px;
-      position: fixed;
-      margin-left: auto;
-      margin-right: auto;
-      background: white;
-    }
-  
-    #comments {
-      position: relative;
-      top: -280px;
-    }
-  }
+#comments {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 450px;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
 }
 
 #map {

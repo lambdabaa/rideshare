@@ -1,5 +1,5 @@
 <div id="trip">
-  <table id='trip_show_table'>
+  <table>
     <tr>
       <td>  
         <div id="title">
@@ -25,11 +25,15 @@
         <div class="clear"></div>
         <div id="map"></div>
       </td>
-    
-      <td id='comments_section'>
-        <div id="fb-root"></div>
-        <div class="fb-comments" data-href=<%= request.url %> data-num-posts="10" data-width="450"></div>
+  
+
+      <td>
+        <div id='comments'>
+          <div id="fb-root"></div>
+          <div class="fb-comments" data-href=<%= request.url %> data-num-posts="10" data-width="450"></div>
+        </div>
       </td>
+
       
     </tr>
   </table>
