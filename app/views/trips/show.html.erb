@@ -1,30 +1,26 @@
 <div id="trip">
   <table>
-    <tr>
-      <td>  
-        <div id="title">
-          <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
-        </div>
-      
-        <div id="user_link">
-          <%= link_to @trip.user.name, @trip.user.url %>    
-        </div>
-    
-        <br/>
-      
-        <div id="from" class="white_circle"> 
-          <%= @trip.start_location.name %>
-        </div>
-    
-        <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
-        
-        <div id="to" class="white_circle">
-          <%= @trip.finish_location.name %>
-        </div>
-    
-        <div class="clear"></div>
-        <div id="map"></div>
-      </td>
+  <tr>
+    <td> 
+    <div id="title">
+      <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
+    </div>
+    <div id="user_link">
+	  <% if current_user %>
+      <%= link_to @trip.user.name, @trip.user.url %>   
+ 	  <% else %>
+      <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
+	  <% end %>
+    </div>
+    <br />
+    <div id="from" class="white_circle"> 
+      <%= @trip.start_location.name %>
+    </div>
+    <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
+    <div id="to" class="white_circle">
+      <%= @trip.finish_location.name %>
+    </div>
+    <div class="clear"></div>
 
     </tr>
     
