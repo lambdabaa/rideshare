@@ -1,27 +1,38 @@
 <div id="trip">
   <table>
-  <tr>
-    <td> 
-    <div id="title">
-      <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
-    </div>
-    <div id="user_link">
-	  <% if current_user %>
-      <%= link_to @trip.user.name, @trip.user.url %>   
- 	  <% else %>
-      <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
-	  <% end %>
-    </div>
-    <br />
-    <div id="from" class="white_circle"> 
-      <%= @trip.start_location.name %>
-    </div>
-    <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
-    <div id="to" class="white_circle">
-      <%= @trip.finish_location.name %>
-    </div>
-    <div class="clear"></div>
+    <tr>
+      <td>  
+        <div id="title">
+          <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
+        </div>
 
+        <div id=<%= current_user && @trip.user.id == current_user.id ? 'delete_link' : 'user_link' %>>
+          <% if current_user && @trip.user.id == current_user.id %>
+            <%= link_to 'Delete this trip', {:controller=>:trips, :action=>:destroy, :id=>@trip.id}, :method=>:delete, :confirm=>'Are you sure you want to permanently delete this trip?' %>
+          <% else %>
+            <% if current_user %>
+              <%= link_to @trip.user.name, @trip.user.url %>   
+         	  <% else %>
+              <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
+        	  <% end %>  
+          <% end %>
+        </div>
+      
+        <br/>
+      
+        <div id="from" class="white_circle"> 
+          <%= @trip.start_location.name %>
+        </div>
+    
+        <%= image_tag "right-arrow.png", :width => "130px", :id => "arrow" %>
+        
+        <div id="to" class="white_circle">
+          <%= @trip.finish_location.name %>
+        </div>
+    
+        <div class="clear"></div>
+        <div id="map"></div>
+      </td>
     </tr>
     
     <tr>
@@ -33,14 +44,5 @@
       </td>
     </tr>
     
-    <% if current_user %>
-      <tr>
-        <td>
-          <div id="delete">
-            <%= link_to "Delete this Trip!", @trip, :method => :delete %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
   </table>
 </div>
