@@ -114,17 +114,20 @@ a.ui-state-hover {
       padding: 30px;
     }
   
-    #comments {
-      position: top;
-      float: left;
-      background: white;
-      -moz-border-radius: 9px;
-    	border-radius: 9px;
-      -moz-box-shadow: 4px 4px 5px #444;
-      -webkit-box-shadow: 4px 4px 5px #444;
-    	box-shadow: 4px 4px 5px #444;
-    	padding: 8px;
-    }
+  }
+  
+  #comments {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    background: white;
+    -moz-border-radius: 9px;
+  	border-radius: 9px;
+    -moz-box-shadow: 4px 4px 5px #444;
+    -webkit-box-shadow: 4px 4px 5px #444;
+  	box-shadow: 4px 4px 5px #444;
+  	padding: 8px;
   }
   
   text-align: center;
@@ -192,20 +195,6 @@ a.ui-state-hover {
     
     padding: 32px;
   }
-}
-
-#comments {
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  float: left;
-  background: white;
-  -moz-border-radius: 9px;
-	border-radius: 9px;
-  -moz-box-shadow: 4px 4px 5px #444;
-  -webkit-box-shadow: 4px 4px 5px #444;
-	box-shadow: 4px 4px 5px #444;
-	padding: 8px;
 }
 
 #map {
