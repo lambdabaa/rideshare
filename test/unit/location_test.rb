@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  DISTANCE = 2.6805612307924327
   
   test "should create a location if one doesn't already exist" do
     midd = locations(:middlebury)
@@ -18,5 +16,9 @@ class LocationTest < ActiveSupport::TestCase
     assert_equal(new_entry.longitude, midd.longitude)
   end
   
-  # TODO(gaye): Test Location.distance
+  test "should return the right distance" do
+    midd = locations(:middlebury)
+    boston = locations(:boston)
+    assert_equal(DISTANCE, Location.distance(midd, boston))
+  end
 end
