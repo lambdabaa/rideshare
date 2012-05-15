@@ -18,7 +18,7 @@ class TripsController < ApplicationController
           params[:search][:max_start_distance_offset] || 0.5,
           params[:search][:max_finish_distance_offset] || 0.5)
     else
-      @trips = Trip.all
+      @trips = Trip.where("departure > ?", Time.now)
     end
     
     respond_to do |format|
@@ -28,7 +28,7 @@ class TripsController < ApplicationController
   end
   
   def show
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:id], :include => :user)
   end
   
   def new

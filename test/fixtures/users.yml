@@ -1,5 +1,8 @@
 gareth:
   id: 1
+  name: "Gareth Aye"
+  image: "http://graph.facebook.com/1366590149/picture?type=square"
+  url: "http://www.facebook.com/gareth.aye"
 
 one:
   provider: MyString
@@ -10,4 +13,3 @@ two:
   provider: MyString
   uid: MyString
   name: MyString
-

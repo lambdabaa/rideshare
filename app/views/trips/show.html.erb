@@ -41,5 +41,14 @@
       </td>
     </tr>
     
+    <% if current_user %>
+      <tr>
+        <td>
+          <div id="delete">
+            <%= link_to "Delete this Trip!", @trip, :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
   </table>
 </div>
