@@ -14,6 +14,7 @@
  //= require jquery_ujs
  //= require_tree .
 $(document).ready(function() {
+  countryPattern = /, ([^,]*)$/;
   googleAutocompleteAPI = function(query, add) {
     BASE_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=";
     API_KEY = "AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA";
@@ -22,7 +23,9 @@ $(document).ready(function() {
         function(data) {
           var suggestions = [];      
           $.each(data.predictions, function(i, val) {  
-            suggestions.push(val["description"].replace(", United States", ""));  
+              country = countryPattern.exec(val["description"])[1];
+              if (country == "United States" || country == "Canada")
+                suggestions.push(val["description"].replace(", " + country, ""));  
           });
           add(suggestions);
         }
