@@ -7,7 +7,7 @@
         </div>
 
         <div id=<%= @trip.user.id == current_user.id ? 'delete_link' : 'user_link' %>>
-          <% if @trip.user.id == current_user.id %>
+          <% if current_user && @trip.user.id == current_user.id %>
             <%= link_to 'Delete this trip', {:controller=>:trips, :action=>:destroy, :id=>@trip.id}, :method=>:delete, :confirm=>'Are you sure you want to permanently delete this trip?' %>
           <% else %>
             <%= link_to @trip.user.name, @trip.user.url %>  
@@ -40,15 +40,5 @@
         </div>
       </td>
     </tr>
-    
-    <% if current_user %>
-      <tr>
-        <td>
-          <div id="delete">
-            <%= link_to "Delete this Trip!", @trip, :method => :delete %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
   </table>
 </div>
