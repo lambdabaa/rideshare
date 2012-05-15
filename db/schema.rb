@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407150636) do
+ActiveRecord::Schema.define(:version => 20120515215610) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120407150636) do
     t.integer  "start_location_id"
     t.integer  "finish_location_id"
     t.float    "cost"
-    t.date     "departure"
+    t.datetime "departure"
     t.boolean  "has_driver"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

@@ -163,6 +163,22 @@ a.ui-state-hover {
     @include rounded-side(bottom-left);
   }
   
+  #delete_link {
+    a {
+      color: #CC0000;
+      &:hover{ color: #FF0000;}
+      text-decoration: none;
+    }
+    height: 40px;
+    padding-top: 15px;
+
+    background-color: white;
+    
+    @include shadow(inset 4px 4px 12px rgba(0,0,0,0.2));
+    @include rounded-side(bottom-right);
+    @include rounded-side(bottom-left);
+  }
+  
   #from {
     float: left;
   }
@@ -245,16 +261,12 @@ a.ui-state-hover {
 	top:1px;
 }
 
-
-
-
 table.tripdisplay {
   height: 60px;
   width: 575px;
   color: #333333;
   font-family: Tahoma, Geneva, sans-serif;
 }
-
 
 table.tripdisplay td.left {
   text-align: center;
@@ -364,12 +376,4 @@ table.tripdisplay td.right {
 	right:-21px; /* value = - border-left-width - border-right-width */
 	border-width:9px 0 9px 21px;
 	border-color:transparent #fff;
-}
-
-#delete {
-  a:link {background-color:#B2FF99;}
-  a:visited {background-color:#FFFF85;}
-  a:hover {background-color:#FF704D;}
-  a:active {background-color:#FF704D;}
-  margin: 20px;
 }
