@@ -5,15 +5,15 @@
       
       <td class='left'>
         <% if trip.has_driver %>
-		  <% if current_user %>
+		      <% if current_user %>
             <%= image_tag trip.user.image, :width => 75, :height => 75 %>
             <br />
             <%= link_to trip.user.name, trip.user.url %>
-	      <% else %>
-	        <%= link_to image_tag( 'unknownUser.png'), "/auth/facebook" %>
+	        <% else %>
+	          <%= link_to image_tag( 'unknownUser.png'), "/auth/facebook" %>
             <br />
             <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
-		  <% end %>
+		      <% end %>
         <% else %>
           <div class='price'><%= trip.cost>0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
         <% end %>
@@ -35,11 +35,11 @@
             <%= image_tag trip.user.image, :width => 75, :height => 75 %>
             <br />
             <%= link_to trip.user.name, trip.user.url %>
-		  <% else %>
-			<%= link_to image_tag( 'unknownUser.png'), "/auth/facebook" %>
+		      <% else %>
+			      <%= link_to image_tag( 'unknownUser.png'), "/auth/facebook" %>
             <br />
             <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
-		  <% end %>
+		      <% end %>
         <% end %>
       </td>
       

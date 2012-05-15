@@ -1,13 +1,17 @@
 <div id="trip">
   <table>
   <tr>
-    <td>  
+    <td> 
     <div id="title">
       <%= @trip.has_driver ? "I have an open seat in my car!" : "I'm looking for a ride!"%>
     </div>
     <div id="user_link">
 	  <% if current_user %>
-        <%= link_to @trip.user.name, @trip.user.url %>   
+	      <% if current_user.uid == @trip.user.uid %>
+          <%= link_to(image_tag('delete-button.png'), @trip, :method => :delete, :confirm => 'Are you sure you want to delete this trip?') %>
+        <% else %>
+          <%= link_to @trip.user.name, @trip.user.url %> 
+        <% end %>  
  	  <% else %>
         <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
 	  <% end %>
