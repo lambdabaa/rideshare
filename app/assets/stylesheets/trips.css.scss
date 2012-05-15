@@ -5,6 +5,7 @@
 
 .facebook {
   color: white;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .fb-like {
@@ -101,6 +102,23 @@ a.ui-state-hover {
   color: #003854;
   font-weight: bold;
 }
+
+#trip {
+  width: 600px;
+  
+  table {
+    position: relative;
+    left: 150px;
+  
+    td {
+      padding: 30px;
+    }
+  
+    #comments {
+      position: relative;
+      top: -280px;
+    }
+  }
   
   text-align: center;
   
@@ -173,10 +191,9 @@ a.ui-state-hover {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 450px;
-  position: fixed;
+  
   margin-left: auto;
   margin-right: auto;
-  background: white;
 }
 
 #map {
