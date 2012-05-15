@@ -15,7 +15,7 @@
             <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
 		      <% end %>
         <% else %>
-          <div class='price'><%= trip.cost>0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
+          <div class='price'><%= trip.cost > 0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
         <% end %>
       </td>
   
@@ -29,7 +29,9 @@
   
       <td class='right'>
         <% if trip.has_driver %>
-          <div class='price'><%= trip.cost>0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
+          <!-- TODO(danielhtrauner: Fix the fact that we have the same code here and above) -->
+          <!-- TODO(danielhtrauner: Move this to helpers; computations shouldn't happen in the views for view code) -->
+          <div class='price'><%= trip.cost > 0 ? number_to_currency(trip.cost, :precision => 0) : 'Free' %></div>
         <% else %>
           <% if current_user %>
             <%= image_tag trip.user.image, :width => 75, :height => 75 %>

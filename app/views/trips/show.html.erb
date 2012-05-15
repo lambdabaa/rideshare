@@ -7,13 +7,9 @@
     </div>
     <div id="user_link">
 	  <% if current_user %>
-	      <% if current_user.uid == @trip.user.uid %>
-          <%= link_to(image_tag('delete-button.png'), @trip, :method => :delete, :confirm => 'Are you sure you want to delete this trip?') %>
-        <% else %>
-          <%= link_to @trip.user.name, @trip.user.url %> 
-        <% end %>  
+      <%= link_to @trip.user.name, @trip.user.url %>   
  	  <% else %>
-        <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
+      <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
 	  <% end %>
     </div>
     <br />
@@ -26,13 +22,16 @@
     </div>
     <div class="clear"></div>
 
-    <div id="map"></div>
-    </td>
-    <td>
-      <div id="comments">
-        <div id="fb-root"></div>
-        <div class="fb-comments" data-href=<%= request.url %> data-num-posts="10" data-width="470"></div>
-      </div>
-    </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div id='comments'>
+          <div id="fb-root"></div>
+          <div class="fb-comments" data-href=<%= request.url %> data-num-posts="7" data-width="600"></div>
+        </div>
+      </td>
+    </tr>
+    
   </table>
 </div>

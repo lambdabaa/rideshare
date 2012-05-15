@@ -1,5 +1,6 @@
 gareth:
   id: 1
+  name: "Gareth Aye"
 
 tommy:
   provider: facebook

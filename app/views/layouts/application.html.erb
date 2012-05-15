@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rideshare</title>
+  <title>Middlebury RideShare</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false" %>
@@ -24,8 +24,8 @@
 </div>
 
 <div class="bigbox">
-  <div id="logo" align = "center">
-    <%= image_tag "logo2.png" %>
+  <div id="logo">
+    <%= link_to image_tag("logo2.png"), root_path %>
   </div>
   
   <table align="center">
