@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120407150636) do
     t.integer  "start_location_id"
     t.integer  "finish_location_id"
     t.float    "cost"
-    t.date     "departure"
+    t.datetime "departure"
     t.boolean  "has_driver"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
