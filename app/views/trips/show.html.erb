@@ -9,7 +9,7 @@
 	  <% if current_user %>
         <%= link_to @trip.user.name, @trip.user.url %>   
  	  <% else %>
-		<%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
+        <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
 	  <% end %>
     </div>
     <br />
