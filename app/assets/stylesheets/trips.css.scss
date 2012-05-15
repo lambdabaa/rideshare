@@ -154,6 +154,7 @@ a.ui-state-hover {
     
     height: 40px;
     padding-top: 15px;
+    padding-bottom: 15px;
 
     background-color: white;
     
@@ -376,4 +377,14 @@ table.tripdisplay td.right {
 	border-width:9px 0 9px 21px;
 	border-color:transparent #fff;
 
+<<<<<<< HEAD
 }
+=======
+#delete {
+  a:link {background-color:#B2FF99;}
+  a:visited {background-color:#FFFF85;}
+  a:hover {background-color:#FF704D;}
+  a:active {background-color:#FF704D;}
+  margin: 20px;
+}
+>>>>>>> 83b24d05e8053685cac2c0a2e9a1087f097478c6

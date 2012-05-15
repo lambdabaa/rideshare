@@ -10,7 +10,11 @@
           <% if current_user && @trip.user.id == current_user.id %>
             <%= link_to 'Delete this trip', {:controller=>:trips, :action=>:destroy, :id=>@trip.id}, :method=>:delete, :confirm=>'Are you sure you want to permanently delete this trip?' %>
           <% else %>
-            <%= link_to @trip.user.name, @trip.user.url %>  
+            <% if current_user %>
+              <%= link_to @trip.user.name, @trip.user.url %>   
+         	  <% else %>
+              <%= link_to 'Login', "/auth/facebook" %> to see who posted this ride!
+        	  <% end %>  
           <% end %>
         </div>
       
@@ -29,7 +33,6 @@
         <div class="clear"></div>
         <div id="map"></div>
       </td>
-
     </tr>
     
     <tr>
@@ -40,5 +43,6 @@
         </div>
       </td>
     </tr>
+    
   </table>
 </div>
