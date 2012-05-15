@@ -14,17 +14,21 @@
  //= require jquery_ujs
  //= require_tree .
 $(document).ready(function() {
-  countryPattern = /, ([^,]*)$/;
+  COUNTRY_PATTERN = /, ([^,]*)$/;
   googleAutocompleteAPI = function(query, add) {
     BASE_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=";
     API_KEY = "AIzaSyCD-EYa8HcfusvWEPNil8IR22BhXUwH7tA";
     MIDD_COORDS = "44.0153,-73.1678";
     $.getJSON("/locations/autocomplete_proxy?url=" + escape(BASE_URL + query.term + "&types=geocode&sensor=true" + "&location=" + MIDD_COORDS + "&radius=500" + "&key=" + API_KEY), 
         function(data) {
+          // this is the list of places that will finally be displayed
           var suggestions = [];      
+          // iterate over the predictions returned by google maps
           $.each(data.predictions, function(i, val) {  
               country = countryPattern.exec(val["description"])[1];
+              // add those from the US and Canada
               if (country == "United States" || country == "Canada")
+                // remove the name of the country
                 suggestions.push(val["description"].replace(", " + country, ""));  
           });
           add(suggestions);
