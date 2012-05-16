@@ -13,3 +13,5 @@ the following students has committed patches to our codebase:
 
 Updated May 8, 2012.
 
+Testing:
+Tests can be found in the test/unit and the test/functional folders.
