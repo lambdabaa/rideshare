@@ -3,7 +3,10 @@ class Trip < ActiveRecord::Base
   belongs_to  :start_location,  :foreign_key => "start_location_id",  :class_name => "Location"
   belongs_to  :finish_location, :foreign_key => "finish_location_id", :class_name => "Location"
 
-  # TODO(armaansarkar): Add validations
+  validates_inclusion_of :has_driver, :in => [true, false]
+  validates :cost, :presence => true, :numericality => true 
+  validates :start_location, :presence => true
+  validates :finish_location, :presence => true
   
   def self.filter_by_date_and_start_and_finish_location(
     first_date,
@@ -13,8 +16,6 @@ class Trip < ActiveRecord::Base
     max_start_distance_offset=0.5,
     max_finish_distance_offset=0.5)
     
-    # TODO(gaye): We should be storing these redundantly in the db 
-    # so we don't have to do these linear time filterings
     trips = Trip.where(:departure => first_date..last_date)
     trips.delete_if {|trip| 
         Location.distance(start_location, trip.start_location) > max_start_distance_offset}
@@ -32,10 +33,14 @@ class Trip < ActiveRecord::Base
 		response= Net::HTTP.get(URI("http://maps.googleapis.com/maps/api/geocode/json?address=#{location}&sensor=false"))
 		# Parses the JSON results
 		result = JSON.parse(response)
-		lat = result ["results"][0]["geometry"]["location"]["lat"]
-		lng = result ["results"][0]["geometry"]["location"]["lng"]
-
-		latlng = {"lat" => lat, "lng" => lng}
-		return latlng
+		begin
+		  lat = result ["results"][0]["geometry"]["location"]["lat"]
+		  lng = result ["results"][0]["geometry"]["location"]["lng"]
+		  
+		  latlng = {"lat" => lat, "lng" => lng}
+		  return latlng
+		rescue NoMethodError
+		  return nil
+	  end
 	end
 end
