@@ -3,7 +3,7 @@ class Trip < ActiveRecord::Base
   belongs_to  :start_location,  :foreign_key => "start_location_id",  :class_name => "Location"
   belongs_to  :finish_location, :foreign_key => "finish_location_id", :class_name => "Location"
 
-  validates :has_driver, :presence => true
+  validates_inclusion_of :has_driver, :in => [true, false]
   validates :cost, :presence => true, :numericality => true 
   validates :start_location, :presence => true
   validates :finish_location, :presence => true

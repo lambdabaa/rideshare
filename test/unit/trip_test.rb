@@ -38,14 +38,14 @@ class TripTest < ActiveSupport::TestCase
   
   test "trip should have a start location" do
     trip = trips(:middlebury_to_boston)
-    trip.user = nil
+    trip.start_location = nil
     saved = trip.save
     assert !saved, "trip should have a start location"
   end
   
   test "trip should have a finish location" do
     trip = trips(:middlebury_to_boston)
-    trip.user = nil
+    trip.finish_location = nil
     saved = trip.save
     assert !saved, "trip should have a finish location"
   end
