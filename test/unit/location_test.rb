@@ -21,4 +21,18 @@ class LocationTest < ActiveSupport::TestCase
     boston = locations(:boston)
     assert_equal(DISTANCE, Location.distance(midd, boston))
   end
+  
+  test "must have a valid latitude" do
+    location = locations(:middlebury)
+    location.latitude = nil
+    saved = location.save
+    assert !saved, "trip should have a valid latitude"
+  end
+  
+  test "must have a valid longitude" do
+    location = locations(:middlebury)
+    location.longitude = nil
+    saved = location.save
+    assert !saved, "trip should have a valid longitude"
+  end
 end

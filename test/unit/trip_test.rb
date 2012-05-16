@@ -14,4 +14,39 @@ class TripTest < ActiveSupport::TestCase
     assert(trips.include?(trip1))
     assert(!trips.include?(trip2))
   end
+  
+  test "trip should have a cost" do
+    trip = trips(:middlebury_to_boston)
+    trip.cost = nil
+    saved = trip.save
+    assert !saved, "trip should have a non-nil cost"
+  end
+  
+  test "trip should have a numerical cost" do
+    trip = trips(:middlebury_to_boston)
+    trip.cost = "some string"
+    saved = trip.save
+    assert !saved, "trip should have a numerical cost"
+  end
+  
+  test "trip should have a driver or passenger" do
+    trip = trips(:middlebury_to_boston)
+    trip.has_driver = nil
+    saved = trip.save
+    assert !saved, "trip should set driver boolean"
+  end
+  
+  test "trip should have a start location" do
+    trip = trips(:middlebury_to_boston)
+    trip.start_location = nil
+    saved = trip.save
+    assert !saved, "trip should have a start location"
+  end
+  
+  test "trip should have a finish location" do
+    trip = trips(:middlebury_to_boston)
+    trip.finish_location = nil
+    saved = trip.save
+    assert !saved, "trip should have a finish location"
+  end
 end
